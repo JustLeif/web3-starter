@@ -5,14 +5,13 @@
 
 	import type * as MeshSdk from '@meshsdk/core';
 
-	import plutusScript from '$lib/validators/plutus.json';
-	import cbor from 'cbor';
-
 	// This is an example of how to turn the plutus.json file into a usable object to pass into transactions...
-	const script: MeshSdk.PlutusScript = {
-		code: cbor.encode(Buffer.from(plutusScript.validators[0].compiledCode, 'hex')).toString('hex'),
-		version: 'V3'
-	};
+	// import plutusScript from '$lib/validators/plutus.json';
+	// import cbor from 'cbor';
+	// const script: MeshSdk.PlutusScript = {
+	// 	code: cbor.encode(Buffer.from(plutusScript.validators[0].compiledCode, 'hex')).toString('hex'),
+	// 	version: 'V3'
+	// };
 
 	let meshSdk: typeof MeshSdk | undefined = $state();
 	let wallets: MeshSdk.Wallet[] = $state([]);
