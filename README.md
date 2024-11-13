@@ -21,7 +21,7 @@ npm i
 # Check your validators (smart contracts)
 npm run aiken-check
 
-# Build your validators (smart contracts), the plutus.json gets thrown into your $lib/validators folder
+# Build your validators (smart contracts), the plutus.json gets thrown into the $lib/validators directory
 npm run aiken-build
 
 # Run dev
