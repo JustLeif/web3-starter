@@ -5,6 +5,17 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
+	esbuild: {
+		target: 'es2022'
+	},
+	build: {
+		target: 'es2022'
+	},
+	optimizeDeps: {
+		esbuildOptions: {
+			target: 'es2022'
+		}
+	},
 	plugins: [
 		sveltekit(),
 		wasm(),

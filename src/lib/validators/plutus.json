@@ -1,0 +1,81 @@
+{
+  "preamble": {
+    "title": "xes-software/web3-starter",
+    "description": "Aiken contracts for project 'xes-software/web3-starter'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.5+a7741ec"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "demo.hello_world.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/demo~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/demo~1Redeemer"
+        }
+      },
+      "compiledCode": "59010601010032323232323225333002323232323253330073370e900118041baa0011323232533300a3370e900018059baa00513232533300f3011002132533300d3370e900018071baa004132533300e002100114a06644646600200200644a66602800229404c94ccc048cdc79bae301600200414a2266006006002602c0026eb0c044c048c048c048c048c048c048c048c048c03cdd50051bae3011300f37546022601e6ea801058cdc79bae3010300e375400e9110d48656c6c6f2c20576f726c64210016375c601e00260186ea801458c034c038008c030004c024dd50008b1805180580118048009804801180380098021baa00114984d9595cd2ab9d5573caae7d5d0aba21",
+      "hash": "230fc15f3b39fa3a82ebbdbfb27d4d1a4cfc3703302e23795c1b81c6"
+    },
+    {
+      "title": "demo.hello_world.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59010601010032323232323225333002323232323253330073370e900118041baa0011323232533300a3370e900018059baa00513232533300f3011002132533300d3370e900018071baa004132533300e002100114a06644646600200200644a66602800229404c94ccc048cdc79bae301600200414a2266006006002602c0026eb0c044c048c048c048c048c048c048c048c048c03cdd50051bae3011300f37546022601e6ea801058cdc79bae3010300e375400e9110d48656c6c6f2c20576f726c64210016375c601e00260186ea801458c034c038008c030004c024dd50008b1805180580118048009804801180380098021baa00114984d9595cd2ab9d5573caae7d5d0aba21",
+      "hash": "230fc15f3b39fa3a82ebbdbfb27d4d1a4cfc3703302e23795c1b81c6"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "demo/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/VerificationKeyHash"
+            }
+          ]
+        }
+      ]
+    },
+    "demo/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "msg",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
