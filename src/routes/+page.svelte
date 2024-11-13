@@ -23,6 +23,8 @@
 
 	$effect(() => {
 		if (activeWallet) {
+			networkId = undefined;
+			lovelaceBalance = undefined;
 			activeWallet.getNetworkId().then((id) => {
 				networkId = id;
 			});
@@ -89,18 +91,23 @@
 					</Card.Title>
 				</Card.Header>
 				<Card.Content>
-					{#if networkId !== undefined}
-						<div class="flex">
-							<p class="pr-2 font-semibold">Current Network:</p>
+					<div class="flex">
+						<p class="pr-2 font-semibold">Current Network:</p>
+
+						{#if networkId !== undefined}
 							<p>{networkId === 0 ? 'Preprod' : 'Mainnet'}</p>
-						</div>
-					{/if}
-					{#if lovelaceBalance !== undefined}
-						<div class="flex">
-							<p class="pr-2 font-semibold">Balance:</p>
+						{:else}
+							<Skeleton class="h-6 w-[100px]" />
+						{/if}
+					</div>
+					<div class="flex">
+						<p class="pr-2 font-semibold">Balance:</p>
+						{#if lovelaceBalance !== undefined}
 							<p>{lovelaceBalance} Lovelace</p>
-						</div>
-					{/if}
+						{:else}
+							<Skeleton class="h-6 w-[150px]" />
+						{/if}
+					</div>
 				</Card.Content>
 			</Card.Root>
 		</div>
